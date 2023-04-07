@@ -17,6 +17,9 @@ module.exports = function() {
   //Actualizar un cliente en especifico (ID)
   router.put("/clientes/:idCliente", clienteController.actualizarCliente )
 
+  //eliminar un cliente en especifico (ID)
+  router.delete("/clientes/:idCliente", clienteController.eliminarCliente )
+
   return router;
 
 }
