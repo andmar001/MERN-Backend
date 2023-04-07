@@ -24,7 +24,9 @@ module.exports = function() {
 
   // ?PRODUCTOS
   // Agrega nuevos productos via POST
-  router.post("/productos", productosController.nuevoProducto )
+  router.post("/productos", 
+    productosController.subirArchivo,   // 1. Sube el archivo
+    productosController.nuevoProducto ) // 2. Agrega el producto
 
   //Obtener todos los productos
   router.get("/productos", productosController.mostrarProductos )

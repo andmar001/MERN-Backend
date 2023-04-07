@@ -1,9 +1,48 @@
 const Productos = require('../models/Productos');
 
+const multer = require('multer');
+const shortid = require('shortid');
+
+const configuracionMulter = {
+  storage: fileStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, __dirname+'../../uploads/')
+    },
+    filename: (req, file, cb) => {
+      const extension = file.mimetype.split('/')[1];
+      cb(null, `${shortid.generate()}.${extension}`)  //genera un id unico
+    }
+  }),
+  fileFilter (req, file, cb) {
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){  //validar el formato de la imagen
+      cb(null, true)
+    }else{
+      cb(new Error('Formato no valido'), false)
+    }
+  }
+}
+
+//pasar la configuracion y el campo
+const upload = multer(configuracionMulter).single('imagen');   //mismo campo que en el modelo
+
+//sube un archivo
+exports.subirArchivo = (req, res, next) => {
+  upload(req, res, function(error){
+    if(error){
+      res.json({ mensaje: error})
+    }
+    return next();
+  })
+}
+
 //agregar un nuevo producto
 exports.nuevoProducto = async (req,res,next) => {
   const producto = new Productos(req.body);
   try{
+    //si hay imagen
+    if(req.file.filename){
+      producto.imagen = req.file.filename;
+    }
     //almacenar
     await producto.save();
     res.json({ mensaje: 'Se agrego un nuevo producto '});
