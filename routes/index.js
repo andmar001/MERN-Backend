@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const clienteController = require("../controllers/clienteController");
+const productosController = require("../controllers/productosController");
 
 module.exports = function() {
 
