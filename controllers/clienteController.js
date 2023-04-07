@@ -42,3 +42,18 @@ exports.mostrarCliente = async (req,res,next)=>{
     next();
   }
 }
+
+//actualizar un cliente
+exports.actualizarCliente = async (req,res,next)=>{
+  try{
+    const cliente = await Clientes.findOneAndUpdate({ _id: req.params.idCliente }, 
+      req.body, {
+        new: true   //devuelve el nuevo cliente
+      });
+      res.json(cliente);
+  }
+  catch(error){
+    console.log(error);
+    next();
+  }
+}
