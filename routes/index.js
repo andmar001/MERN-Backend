@@ -40,6 +40,9 @@ module.exports = function() {
   //Eliminar un producto
   router.delete("/productos/:idProducto", productosController.eliminarProducto )
 
+  //buscar producto por id pero con post
+  router.post("/productos", productosController.buscarProducto )
+
   return router;
 
 }

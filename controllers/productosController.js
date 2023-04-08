@@ -119,3 +119,20 @@ exports.eliminarProducto = async (req,res,next) => {
     next();
   }
 }
+
+//busqueda por post 
+exports.buscarProducto = async (req,res,next) => {
+  try{
+    // busqueda por medio del campo id 
+    const producto = await Productos.findOne({ _id : req.body._id })
+    if (!producto) {
+      res.json({ mensaje: `El producto con ese id no existe` })
+      next();
+    }
+    res.json(producto) 
+  }
+  catch(error){
+    console.log(error)
+    next();
+  }
+}
