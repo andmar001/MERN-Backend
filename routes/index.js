@@ -3,6 +3,7 @@ const router = express.Router();
 
 const clienteController = require("../controllers/clienteController");
 const productosController = require("../controllers/productosController");
+const pedidosController = require("../controllers/pedidosController");
 
 module.exports = function() {
 
@@ -45,6 +46,10 @@ module.exports = function() {
   //buscar producto por id pero con post
   router.post("/productos", productosController.buscarProducto )
 
+  // ?PEDIDOS
+  // Agrega nuevos pedidos via POST
+  router.post("/pedidos", pedidosController.nuevoPedido )
+  
   return router;
 
 }
