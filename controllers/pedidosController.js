@@ -32,7 +32,6 @@ exports.mostrarPedidos = async (req, res, next) => {
 }
 
 // muestra un pedido por su id
-
 exports.mostrarPedido = async (req, res, next) => {
   try {
     const pedido = await Pedidos.findById( req.params.idPedido )
@@ -48,6 +47,49 @@ exports.mostrarPedido = async (req, res, next) => {
     }
     // mostrar pedido
     res.json(pedido);
+  } 
+  catch (error) {
+    console.log(error);
+    next();
+  }
+}
+
+// actualiza un pedido por su id
+exports.actualizarPedido = async (req, res, next) => {
+  try {
+    let pedido = await Pedidos.findOneAndUpdate({ _id: req.params.idPedido},
+      req.body, {
+        new: true
+      })
+      .populate('cliente')
+      .populate({
+        path: 'pedido.producto',
+        model: 'Productos'
+      })
+      res.json(pedido);
+  }   
+  catch (error) {
+    console.log(error);
+    next();  
+  }
+}
+
+// elimina un pedido por su id
+exports.eliminarPedido = async (req, res, next) => {
+  try {
+    const pedidoId = await Pedidos.findById(req.params.idPedido);
+    if(!pedidoId) {
+      res.json({ mensaje: "Ese pedido no existe" });
+      return next();
+    }
+
+    const pedido = await Pedidos.findOneAndDelete({ _id: req.params.idPedido });
+    if(!pedido) {
+      res.json({ mensaje: "Ese pedido no existe" });
+      return next();
+    }
+
+    res.json({ mensaje: "El pedido ha sido eliminado" });
   } 
   catch (error) {
     console.log(error);
