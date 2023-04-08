@@ -49,6 +49,9 @@ module.exports = function() {
   // ?PEDIDOS
   // Agrega nuevos pedidos via POST
   router.post("/pedidos", pedidosController.nuevoPedido )
+
+  // mostrar pedidos
+  router.get("/pedidos", pedidosController.mostrarPedidos )
   
   return router;
 
