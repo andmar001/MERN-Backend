@@ -3,6 +3,8 @@ const Productos = require('../models/Productos');
 const multer = require('multer');
 const shortid = require('shortid');
 
+const fs = require('fs');
+
 const configuracionMulter = {
   storage: fileStorage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -40,7 +42,7 @@ exports.nuevoProducto = async (req,res,next) => {
   const producto = new Productos(req.body);
   try{
     //si hay imagen
-    if(req.file.filename){
+    if(req.file){
       producto.imagen = req.file.filename;
     }
     //almacenar
@@ -83,16 +85,29 @@ exports.mostrarProducto = async (req,res,next) => {
 }
 
 
-//actualizar un producto
+//actualizar un producto via id
 exports.actualizarProducto = async(req, res, next ) => {
   try{
-    const prod = await Productos.findById(req.params.idProducto);
-    if(!prod){
-      res.json({ mensaje: `El producto con ese id no existe`})
-      next();
+    // construir nuevo producto
+    let nuevoProducto = req.body;
+
+    //verificar si hay imagen
+    if(req.file){
+      nuevoProducto.imagen = req.file.filename;
     }
-    const producto = await Productos.findOneAndUpdate({ _id: req.params.idProducto },
-      req.body, {
+    else{
+      let productoAnterior = await Productos.findById(req.params.idProducto);
+      
+      if(!productoAnterior){
+        res.json({ mensaje: `El producto con ese id no existe`})
+        next();
+      }  
+      //si no hay imagen - se mantiene la misma
+      nuevoProducto.imagen = productoAnterior.imagen;
+    }
+
+    let producto = await Productos.findOneAndUpdate({ _id: req.params.idProducto },
+      nuevoProducto, {
         new : true
       });
       res.json(producto)
