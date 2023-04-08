@@ -127,6 +127,9 @@ exports.eliminarProducto = async (req,res,next) => {
       next();
     }
     await Productos.findOneAndDelete({ _id: req.params.idProducto });
+    //eliminar imagen
+    fs.unlinkSync(__dirname+`../../uploads/${prod.imagen}`)
+
     res.json({ mensaje: 'El producto se ha eliminado'})
   }
   catch(error){
