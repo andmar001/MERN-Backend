@@ -91,9 +91,13 @@ exports.actualizarProducto = async(req, res, next ) => {
     // construir nuevo producto
     let nuevoProducto = req.body;
 
-    //verificar si hay imagen
+    //verificar si hay imagen nueva
     if(req.file){
       nuevoProducto.imagen = req.file.filename;
+      //eliminar imagen anterior
+      let productoAnterior = await Productos.findById(req.params.idProducto);
+      fs.unlinkSync(__dirname+`../../uploads/${productoAnterior.imagen}`)
+      
     }
     else{
       let productoAnterior = await Productos.findById(req.params.idProducto);
