@@ -1,0 +1,637 @@
+{
+	"info": {
+		"_postman_id": "5c892f3a-4bdb-444c-88e4-3d8a8ae00080",
+		"name": "MERN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "curso-udemy",
+			"item": [
+				{
+					"name": "clientes",
+					"item": [
+						{
+							"name": "crear cliente",
+							"request": {
+								"auth": {
+									"type": "apikey"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nombre",
+											"value": "americo",
+											"type": "default"
+										},
+										{
+											"key": "apellido",
+											"value": "martinez",
+											"type": "default"
+										},
+										{
+											"key": "empresa",
+											"value": "twitter",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "sulmar@hotmail.com",
+											"type": "default"
+										},
+										{
+											"key": "telefono",
+											"value": "4534345632",
+											"type": "default"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/clientes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"clientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actualizar cliente",
+							"request": {
+								"auth": {
+									"type": "apikey"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nombre",
+											"value": "luisa",
+											"type": "default"
+										},
+										{
+											"key": "apellido",
+											"value": "lopez",
+											"type": "default"
+										},
+										{
+											"key": "empresa",
+											"value": "airbnb mexico",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "luisa@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "telefono",
+											"value": "4534345623",
+											"type": "default"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/clientes/642fa9ff67bbeb6e8dd449ad",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"clientes",
+										"642fa9ff67bbeb6e8dd449ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "obtener clientes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nombre",
+											"value": "luisa",
+											"type": "default"
+										},
+										{
+											"key": "apellido",
+											"value": "lopez",
+											"type": "default"
+										},
+										{
+											"key": "empresa",
+											"value": "airbnb",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "luisa@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "telefono",
+											"value": "4534345623",
+											"type": "default"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/clientes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"clientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cliente by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nombre",
+											"value": "luisa",
+											"type": "default"
+										},
+										{
+											"key": "apellido",
+											"value": "lopez",
+											"type": "default"
+										},
+										{
+											"key": "empresa",
+											"value": "airbnb",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "luisa@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "telefono",
+											"value": "4534345623",
+											"type": "default"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/clientes/642fa9ca272724619457ea33",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"clientes",
+										"642fa9ca272724619457ea33"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "eliminar cliente",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/clientes/642fabd2bb248b9ab882e572",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"clientes",
+										"642fabd2bb248b9ab882e572"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "productos",
+					"item": [
+						{
+							"name": "crear producto",
+							"request": {
+								"auth": {
+									"type": "apikey"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nombre",
+											"value": "camisa github",
+											"type": "default"
+										},
+										{
+											"key": "precio",
+											"value": "100",
+											"type": "default"
+										},
+										{
+											"key": "imagen",
+											"type": "file",
+											"src": "/C:/MERN/curso-udemy/backend/assets/img/8.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"productos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actualizar producto",
+							"request": {
+								"auth": {
+									"type": "apikey"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nombre",
+											"value": "camisa ts",
+											"type": "default"
+										},
+										{
+											"key": "precio",
+											"value": "123",
+											"type": "default"
+										},
+										{
+											"key": "imagen",
+											"type": "file",
+											"src": "/C:/MERN/curso-udemy/backend/assets/img/10.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/productos/64310264b13e2ddc30c8aaab",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"productos",
+										"64310264b13e2ddc30c8aaab"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "obtener productos",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nombre",
+											"value": "luisa",
+											"type": "default"
+										},
+										{
+											"key": "apellido",
+											"value": "lopez",
+											"type": "default"
+										},
+										{
+											"key": "empresa",
+											"value": "airbnb",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "luisa@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "telefono",
+											"value": "4534345623",
+											"type": "default"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"productos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "producto by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nombre",
+											"value": "luisa",
+											"type": "default"
+										},
+										{
+											"key": "apellido",
+											"value": "lopez",
+											"type": "default"
+										},
+										{
+											"key": "empresa",
+											"value": "airbnb",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "luisa@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "telefono",
+											"value": "4534345623",
+											"type": "default"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/productos/642fb62ecf2847891dafcbb9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"productos",
+										"642fb62ecf2847891dafcbb9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "eliminar producto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/productos/6430f113d8f479d22c41ad11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"productos",
+										"6430f113d8f479d22c41ad11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "pedidos",
+					"item": [
+						{
+							"name": "crear pedido",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cliente\":\"642f93138c4011585ef280fc\",\r\n    \"pedido\":[\r\n       { \"producto\":\"64310676571294f0ab72df8e\", \"cantidad\":3 },\r\n       { \"producto\":\"6431068a571294f0ab72df8e\", \"cantidad\":2 },\r\n       { \"producto\":\"6431068a571294f0ab72df8e\", \"cantidad\":1 },\r\n       { \"producto\":\"6431068a571294f0ab72df8e\", \"cantidad\":5 },\r\n       { \"producto\":\"6431068a571294f0ab72df8e\", \"cantidad\":4 }\r\n    ],\r\n    \"total\":13.99\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/pedidos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actualizar pedido",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cliente\":\"6431078b571294f0ab72df9a\",\r\n    \"pedido\":[\r\n       { \"producto\":\"64310676571294f0ab72df8a\", \"cantidad\":3 },\r\n       { \"producto\":\"6431068a571294f0ab72df8e\", \"cantidad\":2 }\r\n    ],\r\n    \"total\":900.50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/pedidos/6431078b571294f0ab72df9a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"pedidos",
+										"6431078b571294f0ab72df9a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "obtener pedidos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/pedidos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "obtener pedido por id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/pedidos/6431074d571294f0ab72df95",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"pedidos",
+										"6431074d571294f0ab72df95"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "eliminar pedido",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/pedidos/6431da10367d1883bf5644cf",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"pedidos",
+										"6431da10367d1883bf5644cf"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
