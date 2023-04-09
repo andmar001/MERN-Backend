@@ -25,3 +25,9 @@ npm i --save mongoose
 npm i --save shortid multer
 
 - para subir una imagen desde postman lo hacemos en el tap de body, form-data, elegimos el tipo file y le damos un nombre, en este caso es imagen, y le damos el valor de la imagen que queremos subir
+
+# backend 
+https://github.com/codigoconjuan/restapis_crm
+
+# frontend
+https://github.com/codigoconjuan/restapis_crm_frontend
