@@ -31,3 +31,6 @@ https://github.com/codigoconjuan/restapis_crm
 
 # frontend
 https://github.com/codigoconjuan/restapis_crm_frontend
+
+# instalacion de cors
+npm i --save cors
